@@ -1,0 +1,7 @@
+.spinner {
+  display: flex;
+  margin: 50px auto;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}

@@ -1,14 +1,10 @@
 .card {
   display: flex;
-  width: 454px;
+  width: 465px;
   height: 281px;
   margin-top: 36px;
   box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
   padding-right: 8px;
-}
-
-.card:shover {
-  opacity: 0.5;
 }
 
 .card img {
@@ -17,12 +13,18 @@
   padding-right: 20px;
 }
 
-.info h2 {
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-info h2 {
   margin-top: 12px;
 }
 
 .date {
-  margin-top: 7px;
+  margin-top: 10px;
   color: #827e7e;
   font-size: 12px;
   line-height: 22px;
@@ -30,6 +32,7 @@
 
 .genres {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-top: 7px;
 }
@@ -37,9 +40,9 @@
 .genres h3 {
   color: rgba(0, 0, 0, 0.65);
   text-align: center;
-  width: 46px;
-  height: 20px;
-  padding-top: 2px;
+  height: 22px;
+  padding: 3px 5px 0 3px;
+  margin-top: 3px;
   margin-right: 8px;
   border-radius: 2px;
   border: 1px solid #d9d9d9;
@@ -50,4 +53,35 @@
   font-size: 12px;
   margin-top: 7px;
   line-height: 22px;
+}
+
+.name-rate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rate-number {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  border: 2px solid;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.good {
+  border-color: #66e900;
+}
+
+.normal {
+  border-color: #e9d100;
+}
+
+.bad {
+  border-color: #e97e00;
+}
+
+.terrible {
+  border-color: #e90000;
 }

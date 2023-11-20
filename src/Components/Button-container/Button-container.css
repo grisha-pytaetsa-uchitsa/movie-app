@@ -1,0 +1,21 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.button-container button {
+  font-size: 16px;
+  width: 64px;
+  padding-bottom: 15px;
+}
+
+.button-container button:hover {
+  opacity: 0.5;
+  border-bottom: 2px solid hsl(209, 100%, 55%, 0.5);
+}
+
+.active {
+  color: #1890ff;
+  border-bottom: 2px solid #1890ff;
+}
