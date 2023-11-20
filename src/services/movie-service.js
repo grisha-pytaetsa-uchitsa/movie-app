@@ -1,5 +1,5 @@
+/* eslint-disable class-methods-use-this */
 export default class MovieService {
-  // eslint-disable-next-line class-methods-use-this
   async getResource(searchValue, pageNumber) {
     const url = `https://api.themoviedb.org/3/search/movie?query=${searchValue}&include_adult=false&language=en-US&page=${pageNumber}`;
 
@@ -20,7 +20,6 @@ export default class MovieService {
     }
   }
 
-  // eslint-disable-next-line class-methods-use-this
   async newGuestSession() {
     const url = 'https://api.themoviedb.org/3/authentication/guest_session/new';
 
@@ -41,7 +40,6 @@ export default class MovieService {
     }
   }
 
-  // eslint-disable-next-line class-methods-use-this
   async ratedMovies(sessionId) {
     const url = `https://api.themoviedb.org/3/guest_session/${sessionId}/rated/movies?language=en-US&page=1&sort_by=created_at.asc`;
 
@@ -62,7 +60,6 @@ export default class MovieService {
     }
   }
 
-  // eslint-disable-next-line class-methods-use-this
   async addRating(sessionId, movieId, grade) {
     const url = `https://api.themoviedb.org/3/movie/${movieId}/rating?guest_session_id=${sessionId}`;
 
@@ -87,7 +84,6 @@ export default class MovieService {
     }
   }
 
-  // eslint-disable-next-line class-methods-use-this
   async getGenres() {
     const url = 'https://api.themoviedb.org/3/genre/movie/list?language=en';
 
