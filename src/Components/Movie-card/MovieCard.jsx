@@ -39,23 +39,29 @@ function MovieCard({ name, date, poster, description, voteAverage, sessionId, mo
     <GenreContextConsumer>
       {(genres) => (
         <div className="card">
-          {poster ? <img src={poster} alt="poster" /> : <img src="./img/no_icon.png" alt="poster" />}
-          <div className="card-info">
-            <div>
-              <div className="name-rate">
-                <h2>{name}</h2>
-                <div className={`rate-number ${nameOfClass}`}>{voteAverage}</div>
+          <div className="card-container">
+            {poster ? <img src={poster} alt="poster" /> : <img src="./img/no_icon.png" alt="poster" />}
+            <div className="card-info">
+              <div>
+                <div className="name-rate">
+                  <h2>{name}</h2>
+                  <div className={`rate-number ${nameOfClass}`}>{voteAverage}</div>
+                </div>
+                <p className="date">{format(new Date(newDateFormat()), 'MMMM dd, yyyy')}</p>
+                <div className="genres">
+                  {genresFn(genresId, genres).map((el) => (
+                    // eslint-disable-next-line no-plusplus
+                    <h3 key={genreCounter++}>{el}</h3>
+                  ))}
+                </div>
+                <p className="description">{`${newDescription()}...`}</p>
               </div>
-              <p className="date">{format(new Date(newDateFormat()), 'MMMM dd, yyyy')}</p>
-              <div className="genres">
-                {genresFn(genresId, genres).map((el) => (
-                  // eslint-disable-next-line no-plusplus
-                  <h3 key={genreCounter++}>{el}</h3>
-                ))}
-              </div>
-              <p className="description">{`${newDescription()}...`}</p>
+              <RateMovie className="movie-rate" sessionId={sessionId} movieId={movieId} onErrorFn={onErrorFn} />
             </div>
-            <RateMovie sessionId={sessionId} movieId={movieId} onErrorFn={onErrorFn} />
+          </div>
+          <div className="mobile">
+            <p className="description-mobile">{`${newDescription()}...`}</p>
+            <RateMovie className="movie-rate-mobile" sessionId={sessionId} movieId={movieId} onErrorFn={onErrorFn} />
           </div>
         </div>
       )}

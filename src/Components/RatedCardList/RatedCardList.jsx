@@ -5,7 +5,7 @@ import PaginationComponet from '../Pagination/PaginationComponet';
 
 function RatedCardList({ ratedItems, error, loading, page, totalResults, searchValue, onClickChange }) {
   return (
-    <ul>
+    <ul className="movie-list">
       {
         // eslint-disable-next-line no-nested-ternary
         error ? (

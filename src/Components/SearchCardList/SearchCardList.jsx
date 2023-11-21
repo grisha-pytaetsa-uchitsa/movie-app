@@ -15,7 +15,7 @@ function SearchCardList({
   onErrorFn,
 }) {
   return (
-    <ul>
+    <ul className="movie-list">
       {
         // eslint-disable-next-line no-nested-ternary
         error ? (
